@@ -1,0 +1,50 @@
+@media screen and (min-width: 320px) and (max-width: 768px){
+  #root{
+    margin: 0 auto 0;
+    padding: 15px;
+  }
+  .header{
+    height: 50px;
+    padding:0 5px;
+    justify-content: space-between;
+  }
+  .header_title{
+    width: calc(100% - 10px);
+    font-size: 1rem;
+    text-align: center;
+  }
+  .currency.checked{
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    line-height: 40px;
+    text-align: center;
+  }
+  .select{
+    right: 5px;
+    width: calc(100% - 10px);
+    bottom: -105px;
+    height: 100px;
+  }
+  .widget{
+    margin-bottom: 15px;
+  }
+  .widgets_container{
+    margin: 15px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 1024px){
+  .widget{
+    margin: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  .widgets_container{
+    margin: 15px 0;
+    justify-content: center;
+  }
+}

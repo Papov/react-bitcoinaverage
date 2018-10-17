@@ -1,0 +1,234 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);.header {
+  height: 97px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.102);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  position: relative;
+  z-index: 3; }
+
+.header_title {
+  margin: 0;
+  padding: 0;
+  width: calc(100% - 318px);
+  text-align: center;
+  font-size: 1.875rem; }
+
+.currency.checked {
+  width: 295px;
+  height: 52px;
+  box-shadow: 0 0 0 1px #92e8fe;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  padding: 0 16px;
+  line-height: 52px;
+  background: url("../images/arrow.png") calc(100% - 15px) 50% no-repeat #101e27;
+  cursor: pointer; }
+
+.select {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 23px;
+  width: 295px;
+  bottom: -84px;
+  height: 94px;
+  box-shadow: 0 0 0 1px #79e7ff;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 13px 16px;
+  justify-content: space-between;
+  transform: translate(0, 0);
+  opacity: 1;
+  transition: all .2s ease-out;
+  background: #101e27;
+  cursor: pointer; }
+
+.select.hidden {
+  transform: translate(0, -10px);
+  opacity: 0;
+  visibility: hidden; }
+
+.widgets_container {
+  height: 353px;
+  margin: 53px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.widget {
+  height: 100%;
+  width: 307px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative; }
+
+.ethereum {
+  background: url("../images/ethereum_bg.png") 0 0 no-repeat; }
+  .ethereum img {
+    position: relative;
+    top: -43px;
+    left: 21px; }
+
+.litecoin {
+  background: url("../images/litecoin_bg.png"); }
+  .litecoin img {
+    position: relative;
+    top: 13px;
+    left: 96px;
+    display: block;
+    z-index: 1; }
+
+.bitcoin {
+  background: url("../images/bitcoin_bg.png") no-repeat 0 0; }
+  .bitcoin img {
+    position: relative;
+    top: -2px;
+    left: 64px; }
+
+.widget_preview {
+  position: relative;
+  height: 190px; }
+
+.widget_title {
+  padding-top: 22px;
+  margin: 0;
+  text-align: center;
+  font-size: 1.375rem;
+  z-index: 1;
+  position: relative;
+  font-weight: bold; }
+
+.changes_data {
+  padding: 0 28px; }
+
+.price {
+  font-size: 1.25rem;
+  font-weight: bold; }
+
+.changes_data > * {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.percent_change {
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 0.875rem; }
+
+.day_change, .week_change, .month_change, .hour_change {
+  font-size: 0.875rem;
+  padding-bottom: 5px; }
+
+.switch {
+  width: 37px;
+  height: 16px;
+  background: url("../images/square.png") no-repeat #c2c2c2;
+  background-position: 40px 0;
+  background-size: cover;
+  border-radius: 10px;
+  position: relative;
+  transition: all .3s ease-out;
+  cursor: pointer; }
+
+.switch.active {
+  background: url("../images/square.png") no-repeat #c2c2c2;
+  background-position: 0 0;
+  background-size: cover;
+  transition: all .3s ease-out; }
+
+.switch.active::before {
+  content: '';
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background: url("../images/button.png") 50%;
+  top: -3px;
+  left: -3px;
+  transition: all .3s ease-out; }
+
+.switch::before {
+  content: '';
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background: url("../images/button.png") 50%;
+  top: -3px;
+  left: calc(100% - 19px);
+  transition: all .3s; }
+
+.color_red {
+  font-weight: bold;
+  color: #c80e24; }
+
+.color_green {
+  font-weight: bold;
+  color: #70c446; }
+
+html {
+  background: url("../images/bg.png"); }
+
+body {
+  background: url("/images/background.png") no-repeat 50% 0/cover;
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  display: flex; }
+
+#root {
+  max-width: 983px;
+  width: 100%;
+  margin: 70px auto 0; }
+
+* {
+  box-sizing: border-box; }
+
+.loader {
+  text-align: center;
+  width: 100%; }
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  #root {
+    margin: 0 auto 0;
+    padding: 15px; }
+  .header {
+    height: 50px;
+    padding: 0 5px;
+    justify-content: space-between; }
+  .header_title {
+    width: calc(100% - 10px);
+    font-size: 1rem;
+    text-align: center; }
+  .currency.checked {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    line-height: 40px;
+    text-align: center; }
+  .select {
+    right: 5px;
+    width: calc(100% - 10px);
+    bottom: -105px;
+    height: 100px; }
+  .widget {
+    margin-bottom: 15px; }
+  .widgets_container {
+    margin: 15px 0;
+    flex-wrap: wrap;
+    justify-content: center; } }
+
+@media screen and (min-width: 425px) and (max-width: 1024px) {
+  .widget {
+    margin: 15px; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .widgets_container {
+    margin: 15px 0;
+    justify-content: center; } }
+
+/*# sourceMappingURL=style.bundle.css.map*/

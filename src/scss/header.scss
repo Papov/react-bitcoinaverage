@@ -1,0 +1,57 @@
+.header {
+  height: 97px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 0 1px $white-border-line;
+  border-radius: 10px;
+  background: $opacity-white-background;
+  position: relative;
+  z-index: 3;
+}
+
+.header_title {
+  margin: 0;
+  padding: 0;
+  width: calc(100% - 318px);
+  text-align: center;
+  font-size: 1.875rem;
+}
+.currency.checked {
+  width: 295px;
+  height: 52px;
+  box-shadow: 0 0 0 1px $blue-border-line;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  padding: 0 16px;
+  line-height: 52px;
+  background: url("../images/arrow.png") calc(100% - 15px) 50% no-repeat $background-color;
+  cursor: pointer;
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 23px;
+  width: 295px;
+  bottom: -84px;
+  height: 94px;
+  box-shadow: 0 0 0 1px #79e7ff;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 13px 16px;
+  justify-content: space-between;
+  transform: translate(0,0);
+  opacity: 1;
+  transition: all .2s ease-out;
+  background: $background-color;
+  cursor: pointer;
+}
+
+.select.hidden {
+  transform: translate(0,-10px);
+  opacity: 0;
+  visibility: hidden;
+
+}

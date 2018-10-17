@@ -1,0 +1,35 @@
+@import "palitra_font_sizes";
+@import "./header";
+@import "./widgets";
+
+html{
+  background: url("../images/bg.png");
+}
+
+body{
+  background: url('/images/background.png') no-repeat 50% 0/ cover;
+  padding: 0;
+  margin: 0;
+  color:$white-color;
+  font-family: $font;
+  display: flex;
+
+}
+
+#root {
+  max-width: 983px;
+  width: 100%;
+  margin: 70px auto 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.loader {
+  text-align: center;
+  width: 100%;
+}
+
+//===ADAPTIVE=====
+@import "./adaptive";
