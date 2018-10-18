@@ -1,7 +1,7 @@
 import React from 'react';
 import Ethereum from "./Ethereum";
 import Litecoin from "./Litecoin";
-import Bitcoin from "./Bitcoin"
+import Bitcoin from "./Bitcoin";
 
 const API = 'https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD';
 
@@ -44,29 +44,44 @@ class App extends React.Component{
         e.currentTarget.dataset.course = beforeCourse;
     }
 
-
-
-    componentDidMount() {
-        fetch(API)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState({
-                        isLoaded: true,
-                        data: result
-                    });
-                },
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error
-                    });
-                }
-            )
+    componentDidMount(){
+        let xhhtp = new XMLHttpRequest();
+        xhhtp.open('GET', API, true);
+        let _this = this;
+        xhhtp.onreadystatechange = function() {
+            if(xhhtp.readyState === XMLHttpRequest.DONE && xhhtp.status === 200){
+                let result = xhhtp.response;
+                result = JSON.parse(result)
+                _this.setState({
+                    isLoaded: true,
+                    data: result
+                });
+            }
+        }
+        xhhtp.send()
     }
 
+    // componentDidMount() {
+    //     fetch(API)
+    //         .then(res => res.json())
+    //         .then(
+    //             (result) => {
+    //                 this.setState({
+    //                     isLoaded: true,
+    //                     data: result
+    //                 });
+    //             },
+    //             (error) => {
+    //                 this.setState({
+    //                     isLoaded: true,
+    //                     error
+    //                 });
+    //             }
+    //         )
+    // }
+
     render(){
-        const { error, isLoaded, data, currency, currencyIcon, course } = this.state;
+        const {isLoaded, data, currency, currencyIcon, course } = this.state;
         const classSelect = this.state.hidden ? 'select hidden' : 'select';
         return(
             <div className='app'>
